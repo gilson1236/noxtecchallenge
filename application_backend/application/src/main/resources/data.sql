@@ -1,0 +1,1 @@
+INSERT INTO TABLE_PET (name, spitz) VALUES ('Nala', 'SRD')
