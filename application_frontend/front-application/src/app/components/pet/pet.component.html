@@ -1,0 +1,19 @@
+<form [formGroup]="petForm">
+    <label for="pet-name">Name:</label>
+    <input id="name" type="text" formControlName="name">
+
+    <label for="pet-spitz">Spitz: </label>
+    <input id="spitz" type="text" formControlName="spitz">
+
+    <button mat-raised-button color="primary"
+      (click)="save()" type="submit">
+      Save
+    </button>
+    <button mat-raised-button (click)="onCancel()"
+      class="btn-space" type="button">
+      Cancel
+    </button>
+
+</form>
+
+

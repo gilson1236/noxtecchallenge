@@ -1,0 +1,57 @@
+<div class="adoption">
+    <button [routerLink]="['/pets']" routerLinkActive="active">
+      Create Adoption
+    </button>
+</div>
+<!--
+<div class="adoption">
+    <button (click)="createAdoption()">Create Adoption</button>
+</div>-->
+<!--
+<div class="parent">
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Spitz</th>
+        </thead>
+        @for (pet of pets$ | async; track pet.id) {
+            <tbody>
+                <tr>
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.spitz }}</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+-->
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Spitz</th>
+        </thead>
+        <tbody>
+            <!--<tr *ngFor="let pet of pets$ | async">-->
+            <tr>
+                @for (pet of pets$ | async; track $index) {
+                    <td>{{ pet.name }}</td>
+                    <td>{{ pet.spitz }}</td>
+                    <td>
+                        <button (click)="deleteAdoption(pet.id)">Remove</button>
+                        <button (click)="detailedAdoption(pet.id)">Detail</button>
+                        <button (click)="updateAdoption(pet.id)">Update</button>
+                    </td>
+                    <br>
+                }
+                <!--<td>{{ pet.name }}</td>
+                <td>{{ pet.spitz }}</td>-->
+                <!--<td>
+                    <button (click)="deleteColaborador(colaborador.id)" class="btn btn-danger">Excluir</button>
+                    <button (click)="detalharColaborador(colaborador.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
