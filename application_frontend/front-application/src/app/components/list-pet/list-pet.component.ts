@@ -16,8 +16,6 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 export class ListPetComponent {
 
   pets$: Observable<Pet[]>;
-  //opcoesSubscription: Subscription;
-
   id: number
   pet: Pet
 
@@ -31,7 +29,6 @@ export class ListPetComponent {
      }
   
   ngOnDestroy(): void {
-    //this.opcoesSubscription.unsubscribe();
   }
 
   ngOnInit(): void {
@@ -41,33 +38,9 @@ export class ListPetComponent {
   }
 
   reloadData(){
-    /*const subscription = this.colaboradorService.getColaboradorList().subscribe(
-      colaboradores => { 
-        this.colaboradores = colaboradores;
-      }
-    );
-    
-    this.opcoesSubscription.add(subscription);
-  }*/
 
     this.pets$ = this.petService.listPets();
   } 
-
-  /*detalharColaborador(id: number){
-    this.router.navigate(['detalhes', id]);
-  }
-  
-  deleteColaborador(id: number){
-    this.colaboradorService.deletarColaborador(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error)
-      );
-  }
-*/
 
 createAdoption() {
   this.router.navigate(['pets'])

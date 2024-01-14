@@ -53,7 +53,6 @@ export class UpdateAdoptionComponent {
     this.petObject.id = this.petForm.value.id
     this.petObject.name = this.petForm.value.name
     this.petObject.spitz = this.petForm.value.spitz
-    console.log(this.petObject)
     this.petService.update(this.id, this.petObject).subscribe(
       data => console.info(data)
     )

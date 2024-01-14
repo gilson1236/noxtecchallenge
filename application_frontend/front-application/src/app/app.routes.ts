@@ -13,7 +13,6 @@ export const routes: Routes = [
     },
     {
         path: 'pets', component: PetComponent
-        //loadChildren: () => import('./components/pet/pets.routes').then(p => p.PET_ROUTES)
     },
     {
         path: 'details/:id', component: DetailedComponent

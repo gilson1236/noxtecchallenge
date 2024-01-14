@@ -12,21 +12,15 @@ import { Router } from '@angular/router';
   styleUrl: './pet.component.scss'
 })
 export class PetComponent implements OnInit{
-  //petForm: FormGroup;
 
   constructor(
-              private formBuilder: FormBuilder,
               private petService: PetService,
               private router: Router) {
-    /*this.petForm = ({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      spitz: new FormControl('')
-    });*/
+    
   }
   
   ngOnInit(): void {
-    //this.createForm(new Pet());
+    
   }
   petForm = new FormGroup({
     id: new FormControl(''),
@@ -34,29 +28,18 @@ export class PetComponent implements OnInit{
     spitz: new FormControl('')
   })
 
-  //createForm(pet: Pet){
-    /*this.petForm = this.formBuilder.group({
-      name: [pet.name],
-      spitz: [pet.spitz]
-    });*/
+  pet = {
+    "id": this.petForm.value.id,
+    "name": this.petForm.value.name,
+    "spitz": this.petForm.value.spitz
+  }
 
-    pet = {
-      "id": this.petForm.value.id,
-      "name": this.petForm.value.name,
-      "spitz": this.petForm.value.spitz
-    }
-
-    petClass: Pet = new Pet();
-    
-  //}
-
-  //pet: Pet = new Pet()
+  petClass: Pet = new Pet();
 
   save (){
     this.pet.id = this.petForm.value.id
     this.pet.name = this.petForm.value.name
     this.pet.spitz = this.petForm.value.spitz
-    console.log(this.pet)
     this.petService.save(this.pet).subscribe((v) => console.info(v))
 
     alert("Pet adopted!")
