@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Pet } from '../../models/pet';
-import { Observable, Subscription } from 'rxjs';
+import { Observable} from 'rxjs';
 import { PetService } from '../pet.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-list-pet',
   standalone: true,
   host: {ngSkipHydration: 'true'},
-  imports: [RouterLink, AsyncPipe, CommonModule],
+  imports: [RouterLink, AsyncPipe, CommonModule, MatButtonModule],
   templateUrl: './list-pet.component.html',
   styleUrl: './list-pet.component.scss'
 })

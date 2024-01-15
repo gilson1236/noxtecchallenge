@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Pet } from '../../models/pet';
 import { PetService } from '../pet.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-detailed',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule],
   templateUrl: './detailed.component.html',
   styleUrl: './detailed.component.scss'
 })

@@ -1,10 +1,10 @@
 <div class="adoption">
-    <button [routerLink]="['/pets']" routerLinkActive="active">
+    <button mat-raised-button class="buttons" color="primary" [routerLink]="['/pets']" routerLinkActive="active">
       Create Adoption
     </button>
 </div>
 
-<div>
+<div class="parent">
     <table>
         <thead>
             <th>Name</th>
@@ -16,9 +16,9 @@
                     <td>{{ pet.name }}</td>
                     <td>{{ pet.spitz }}</td>
                     <td>
-                        <button (click)="deleteAdoption(pet.id)">Remove</button>
-                        <button (click)="detailedAdoption(pet.id)">Detail</button>
-                        <button (click)="updateAdoption(pet.id)">Update</button>
+                        <button mat-raised-button class="buttons" color="warn" (click)="deleteAdoption(pet.id)">Remove</button>
+                        <button mat-raised-button class="buttons" color="accent" (click)="detailedAdoption(pet.id)">Detail</button>
+                        <button mat-raised-button class="buttons" (click)="updateAdoption(pet.id)">Update</button>
                     </td>
                     <br>
                 }

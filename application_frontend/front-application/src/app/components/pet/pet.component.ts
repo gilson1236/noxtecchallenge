@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Pet } from '../../models/pet';
 import { PetService } from '../pet.service';
 import { Router } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button'
 
 @Component({
   selector: 'app-pet',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, MatButtonModule],
   templateUrl: './pet.component.html',
   styleUrl: './pet.component.scss'
 })
